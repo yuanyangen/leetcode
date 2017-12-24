@@ -20,7 +20,6 @@ Output: "bb"
  */
 public class LongestPalindromicSubstring {
     public String longestPalindrome(String s) {
-
         byte[] bytes = s.getBytes();
         String ret = "";
         int curLen = 0;
