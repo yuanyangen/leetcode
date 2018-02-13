@@ -20,6 +20,7 @@ public class AddTwoNumbers {
         int curl2 = 0;
 
         while (true) {
+            //先取出两个list的对应当前位，如果没有， 则认为是0
             if (l1 != null && l2 != null) {
                 curl1 = l1.val;
                 curl2 = l2.val;
@@ -37,6 +38,7 @@ public class AddTwoNumbers {
                 break;
             }
 
+            //根据两个值和进位相加，得到目标值和进位
             int cur = 0;
             if (curl1 + curl2 + over >= 10) {
                 cur = curl1 + curl2 + over - 10;
@@ -45,6 +47,8 @@ public class AddTwoNumbers {
                 cur = curl1 + curl2 + over;
                 over = 0;
             }
+
+            //生成目标队列
             if (head == null) {
                 curNode = new ListNode(cur);
                 head = curNode;
@@ -53,6 +57,8 @@ public class AddTwoNumbers {
                 curNode = curNode.next;
             }
         }
+
+        //如果最后有进位，补上进位
         if (over == 1) {
             curNode.next = new ListNode(1);
         }
