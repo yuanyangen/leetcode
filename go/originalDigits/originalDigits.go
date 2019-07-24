@@ -37,7 +37,7 @@ func originalDigits(s string) string {
 	return ret
 }
 
-
+// 计算0-9的某个数字的在字符串中的个数， 同时将对应的数据的数目从allChars中去掉
 func calc(number int) {
 	c := uniqChar[number]
 	count := countOfChar(c)
@@ -49,7 +49,7 @@ func calc(number int) {
 		}
 	}
 }
-
+// 计算输入中某个字母的个数
 func countOfChar(c string) int {
 	if v, ok := allChars[c]; ok {
 		return v
